@@ -1,0 +1,7 @@
+version: '2'
+services:
+  vendor-behat:
+    image: composer/composer:alpine
+    volumes:
+      - .:/app/
+    command: update -vvv

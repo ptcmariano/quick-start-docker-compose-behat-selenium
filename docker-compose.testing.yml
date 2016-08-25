@@ -1,0 +1,15 @@
+version: '2'
+services:
+  selenium-chrome:
+    ports:
+     - "4444:4444"
+    image: selenium/standalone-chrome
+  tests-wordpress:
+    image: wordpress:latest
+    links:
+      - wordpress
+      - selenium-chrome
+    volumes:
+     - .:/var/www/wordpress/
+    working_dir: /var/www/wordpress/
+    command: bash -c './vendor/behat/behat/bin/behat'

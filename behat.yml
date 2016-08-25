@@ -1,0 +1,16 @@
+default:
+  autoload:
+    '': %paths.base%/tests/features/contexts
+  suites:
+    home-wordpress:
+      paths:
+        - %paths.base%/tests/features/
+      contexts:
+        - Tests\Functional\AppContext
+  extensions:
+    Behat\MinkExtension:
+      base_url:  'http://app-register-candidate/'
+      default_session: selenium2
+      browser_name: chrome
+      selenium2:
+        wd_host: http://selenium-chrome:4444/wd/hub
