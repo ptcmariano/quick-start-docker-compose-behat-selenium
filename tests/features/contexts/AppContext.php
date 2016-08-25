@@ -58,6 +58,6 @@ class AppContext extends MinkContext
     public function seeATitleOfMyBlog()
     {
         $this->tirarPrintScreen();
-        TestCase::assertEquals(1, 1);
+        TestCase::assertEquals(1, 1);//TODO: get element and compare with expect
     }
 }
