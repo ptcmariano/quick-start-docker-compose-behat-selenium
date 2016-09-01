@@ -12,4 +12,4 @@ services:
     volumes:
      - .:/var/www/wordpress/
     working_dir: /var/www/wordpress/
-    command: bash -c './vendor/behat/behat/bin/behat'
+    command: bash -c 'sleep 5 ; ./vendor/behat/behat/bin/behat'

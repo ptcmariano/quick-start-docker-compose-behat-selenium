@@ -16,10 +16,10 @@ class AppContext extends MinkContext
     /**
      * @AfterStep
      */
-    public function capturarFalha(AfterStepScope $scope)
+    public function catchFail(AfterStepScope $scope)
     {
         if (self::RESULT_CODE_FAIL === $scope->getTestResult()->getResultCode()) {
-            $this->tirarPrintScreen();
+            $this->takePrintscreen();
         }
     }
 
@@ -31,7 +31,7 @@ class AppContext extends MinkContext
         return $this->screenshotPath;
     }
 
-    public function tirarPrintScreen()
+    public function takePrintscreen()
     {
         $driver = $this->getSession()->getDriver();
         if (!$driver instanceof Selenium2Driver) {
@@ -49,6 +49,7 @@ class AppContext extends MinkContext
      */
     public function aPageLoadWordpress()
     {
+        // host 'wordpress' is resolved in networkd created by docker
         $this->visit('http://wordpress/');
     }
 
@@ -57,7 +58,7 @@ class AppContext extends MinkContext
      */
     public function seeATitleOfMyBlog()
     {
-        $this->tirarPrintScreen();
+        $this->takePrintscreen();
         TestCase::assertEquals(1, 1);//TODO: get element and compare with expect
     }
 }
