@@ -1,5 +1,9 @@
 # quick-start-docker-compose-behat-selenium
-Example of use docker compose and behat to test
+Example of use docker-compose and behat to test
+
+# requirements
+- docker + docker-compose => [recommended docker toolbox](https://www.docker.com/products/docker-toolbox)
+- 5GB disk space
 
 ## generate dependencies
 docker-compose -f docker-compose.vendor.yml up
