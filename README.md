@@ -2,8 +2,10 @@
 Example of use docker-compose and behat to test
 
 # requirements
-- docker + docker-compose => [recommended docker toolbox](https://www.docker.com/products/docker-toolbox)
+- docker + docker-compose => [recommended docker toolbox](https://www.docker.com/products/docker-toolbox) or Linux 
 - 5GB disk space
+
+Toolbox is currently unavailable for Linux; To get started with Docker on Linux, please follow the Linux [Getting Started Guide](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 
 ## generate dependencies
 docker-compose -f docker-compose.vendor.yml up
